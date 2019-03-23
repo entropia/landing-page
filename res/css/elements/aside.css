@@ -1,0 +1,18 @@
+aside {
+  display: none;
+  position: fixed;
+  top: 50vh;
+  right: 0;
+  transform: translateY(-50%);
+}
+
+aside > * + * {
+  display: block;
+  margin-top: var(--content-margin);
+}
+
+.aside-box {
+  width: 90px;
+  height: 90px;
+  background-color: var(--color-main-background);
+}

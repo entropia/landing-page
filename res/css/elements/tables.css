@@ -1,0 +1,35 @@
+table,
+tr,
+th,
+td {
+  border: solid 1px #cccccc; /* IE11 fallback */
+  border: solid 1px var(--color-grey-2);
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+tr {
+  background-color: var(--color-white);
+}
+
+tr:nth-of-type(2n+1) {
+  background-color: var(--color-grey-1);
+}
+
+th,
+td {
+  padding: 6px;
+  text-align: left;
+}
+
+th {
+
+}
+
+td {
+
+}

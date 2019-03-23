@@ -1,0 +1,14 @@
+.streetmap {
+  width: 100%;
+  height: 400px; /* IE11 fallback */
+  height: var(--height-streetmap);
+  max-height: var(--max-height-streetmap);
+  border: none;
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .streetmap {
+    pointer-events: all;
+  }
+}

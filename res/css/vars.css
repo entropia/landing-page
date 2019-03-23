@@ -1,0 +1,35 @@
+:root {
+  --content-wrap: 1280px;
+  --content-margin: 24px;
+  --content-margin-half: 12px;
+
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  --color-brand-primary: #ea5b0c;
+  --color-brand-secondary: #666666;
+  --color-main-background: #f6f6f6;
+  --color-main-text: #333333;
+
+  --color-grey-1: #eeeeee;
+  --color-grey-2: #dddddd;
+  --color-grey-3: #cccccc;
+
+  --height-streetmap: calc(var(--content-wrap) / 2);
+  --max-height-streetmap: calc(100vw / 2);
+
+  --breakpoint-small: 480px;
+  --breakpoint-medium: 768px;
+  --breakpoint-medium-large: 1024px;
+  --breakpoint-large: 1280px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --content-margin: 30px;
+    --content-margin-half: 15px;
+
+    --height-streetmap: calc(var(--content-wrap) / 3);
+    --max-height-streetmap: calc(100vw / 3);
+  }
+}

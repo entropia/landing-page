@@ -1,0 +1,30 @@
+nav {
+
+}
+
+nav ul {
+
+}
+
+nav ul::before,
+nav ul::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+nav ul li {
+  display: block;
+  float: left;
+}
+
+nav ul li + li {
+  margin-left: 30px; /* IE11 fallback */
+  margin-left: var(--content-margin-half);
+}
+
+nav ul li a {
+  color: #ea5b0c; /* IE11 fallback */
+  color: var(--color-brand-primary);
+  text-decoration: none;
+}
