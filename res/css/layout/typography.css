@@ -30,7 +30,6 @@ p + p {
 }
 
 p a {
-  color: #ea5b0c; /* IE11 fallback */
   color: var(--color-brand-primary);
   text-decoration: none;
 }

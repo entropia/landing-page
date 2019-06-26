@@ -1,5 +1,4 @@
 footer {
-  padding: 30px 0; /* IE11 fallback */
   padding: var(--content-margin) 0;
   background-color: var(--color-white);
 }
@@ -21,12 +20,10 @@ footer ul li {
 }
 
 footer ul li + li {
-  margin-left: 30px; /* IE11 fallback */
   margin-left: var(--content-margin-half);
 }
 
 footer ul li a {
-  color: #ea5b0c; /* IE11 fallback */
   color: var(--color-brand-primary);
   text-decoration: none;
 }

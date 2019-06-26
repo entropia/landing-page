@@ -1,5 +1,4 @@
 header {
-  padding: 30px 0; /* IE11 fallback */
   padding: var(--content-margin) 0;
   background-color: var(--color-white);
 }

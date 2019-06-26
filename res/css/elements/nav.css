@@ -19,12 +19,10 @@ nav ul li {
 }
 
 nav ul li + li {
-  margin-left: 30px; /* IE11 fallback */
   margin-left: var(--content-margin-half);
 }
 
 nav ul li a {
-  color: #ea5b0c; /* IE11 fallback */
   color: var(--color-brand-primary);
   text-decoration: none;
 }

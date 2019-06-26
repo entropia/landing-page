@@ -9,6 +9,7 @@
 @import 'elements/tables.css';
 @import 'elements/tiles.css';
 @import 'elements/streetmap.css';
+@import 'elements/beware-of-ie.css';
 
 @import 'layout/grid.css';
 @import 'layout/typography.css';
