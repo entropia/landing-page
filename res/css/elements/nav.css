@@ -1,11 +1,3 @@
-nav {
-
-}
-
-nav ul {
-
-}
-
 nav ul::before,
 nav ul::after {
   content: '';
@@ -19,10 +11,14 @@ nav ul li {
 }
 
 nav ul li + li {
-  margin-left: var(--content-margin-half);
+  margin-left: var(--content-margin);
 }
 
 nav ul li a {
   color: var(--color-brand-primary);
   text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
 }

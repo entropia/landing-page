@@ -30,3 +30,8 @@ header img {
   width: auto;
   height: 3rem;
 }
+
+header a {
+  color: var(--color-main-text);
+  text-decoration: none;
+}
