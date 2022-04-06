@@ -14,10 +14,10 @@ class EntropiaWikiEventsJsonApi
     }
 
     /**
-     * @param string $url the public url of the requested website
+     * @param ?string $url the public url of the requested website
      * @return string the html content of the website
      */
-    private static function queryHtmlContent(string $url = null)
+    private static function queryHtmlContent(?string $url = null)
     {
         return file_get_contents($url ?? self::WIKI_EVENTS_LIST_URL);
     }
@@ -51,7 +51,7 @@ class EntropiaWikiEventsJsonApi
     }
 
     /**
-     * @param int|null $max_entries the desired maximum number of events in the API response JSON
+     * @param ?int $max_entries the desired maximum number of events in the API response JSON
      * @return string|false
      */
     private static function requestNextEventsAsJson(int $max_entries = null)
