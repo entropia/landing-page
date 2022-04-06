@@ -15,6 +15,9 @@
   --color-grey-2: #dddddd;
   --color-grey-3: #cccccc;
 
+  --color-status-positive: #3f784c;
+  --color-status-negative: #540b0e;
+
   --height-streetmap: calc(var(--content-wrap) / 2);
   --max-height-streetmap: calc(100vw / 2);
 

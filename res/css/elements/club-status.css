@@ -1,0 +1,31 @@
+.club-status {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  color: var(--color-white);
+  opacity: 0;
+  transition: opacity 1.2s;
+}
+
+.club-status::before {
+  content: '';
+  padding: 4px 8px;
+}
+
+.club-status-opened,
+.club-status-closed {
+  opacity: 1;
+}
+
+.club-status-opened::before {
+  content: 'geöffnet';
+  background-color: var(--color-status-positive);
+}
+
+.club-status-closed::before {
+  content: 'geschlossen';
+  background-color: var(--color-status-negative);
+}
