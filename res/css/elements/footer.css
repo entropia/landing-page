@@ -3,10 +3,6 @@ footer {
   background-color: var(--color-white);
 }
 
-footer ul {
-
-}
-
 footer ul::before,
 footer ul::after {
   content: '';
