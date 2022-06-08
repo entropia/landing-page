@@ -3,26 +3,16 @@ h1 {
   line-height: 3rem;
 }
 
-h2,
-h3,
-h4 {
-  margin-bottom: .8rem;
-}
-
 h2 {
+  margin-bottom: .8rem;
   font-size: 2rem;
+  line-height: 3rem;
 }
 
 h3 {
-  font-size: 1.6rem;
-}
-
-h4 {
-
-}
-
-p {
-
+  margin-bottom: .2rem;
+  font-size: 1.4rem;
+  line-height: 1.8rem;
 }
 
 p + p {
