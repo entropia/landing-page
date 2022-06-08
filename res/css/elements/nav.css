@@ -6,6 +6,7 @@ nav ul::after {
 }
 
 nav ul li {
+  position: relative;
   display: block;
   float: left;
 }
@@ -14,9 +15,23 @@ nav ul li + li {
   margin-left: var(--content-margin);
 }
 
+nav ul li::before {
+  content: '';
+  position: absolute;
+  top: -4px;
+  right: -8px;
+  bottom: -4px;
+  left: -8px;
+  background-color: var(--color-brand-primary);
+  pointer-events: none;
+  z-index: 0;
+}
+
 nav ul li a {
-  color: var(--color-brand-primary);
+  position: relative;
+  color: var(--color-white);
   text-decoration: none;
+  z-index: 1;
 }
 
 nav ul li a:hover {
