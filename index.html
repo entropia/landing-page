@@ -137,7 +137,27 @@
 
       <section>
         <h2>Anfahrt</h2>
-        <iframe class="streetmap" src="https://www.openstreetmap.org/export/embed.html?bbox=8.40483605861664%2C49.00582050559493%2C8.40931534767151%2C49.00738993862014&amp;layer=mapnik&amp;marker=49.00660522829069%2C8.407075703144073&layer=hot"></iframe>
+        <div class="streetmap">
+          <iframe src="" data-source="https://www.openstreetmap.org/export/embed.html?bbox=8.40483605861664%2C49.00582050559493%2C8.40931534767151%2C49.00738993862014&amp;layer=mapnik&amp;marker=49.00660522829069%2C8.407075703144073&layer=hot"></iframe>
+          <img srcset="
+            res/img/map/map-1220.png 1220w,
+            res/img/map/map-1170.png 1170w,
+            res/img/map/map-964.png 964w,
+            res/img/map/map-708.png 708w,
+            res/img/map/map-512.png 512w,
+            res/img/map/map-432.png 432w,
+            "
+            src="res/img/map/map-1220.png"
+            alt="Kartenansicht der Adresse: Steinstraße 23, 76133 Karlsruhe"
+          >
+        </div>
+        <div class="activate-map">
+          <span>
+            <strong class="activate-map-trigger">Karte laden</strong>
+            Nach Klick auf diesen Button werden Inhalte www.openstreetmap.org geladen. Die Datenschutzbestimmungen von OpenStreetMap sind <a href="https://wiki.osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noreferrer noopener">hier</a> nachlesbar.
+          </span>
+        </div>
+      </section>
       </section>
 
     </div>
