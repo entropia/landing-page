@@ -12,28 +12,20 @@ nav ul li {
 }
 
 nav ul li + li {
-  margin-left: var(--content-margin);
-}
-
-nav ul li::before {
-  content: '';
-  position: absolute;
-  top: -4px;
-  right: -8px;
-  bottom: -4px;
-  left: -8px;
-  background-color: var(--color-brand-primary);
-  pointer-events: none;
-  z-index: 0;
+  margin-left: calc(var(--content-margin) / 2);
 }
 
 nav ul li a {
   position: relative;
+  display: block;
+  padding: 4px 10px;
   color: var(--color-white);
+  background-color: var(--color-brand-primary);
   text-decoration: none;
   z-index: 1;
+  transition: background-color .2s;
 }
 
 nav ul li a:hover {
-  text-decoration: underline;
+  background-color: var(--color-brand-secondary);
 }
