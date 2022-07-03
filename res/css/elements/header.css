@@ -5,10 +5,10 @@ header {
 
 header .content-wrap {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 header .content-wrap .title::before,
@@ -31,11 +31,8 @@ header .title * {
   float: left;
 }
 
-header .title * + * {
-  margin-left: var(--content-margin);
-}
-
 header img {
+  display: none;
   width: auto;
   height: 3rem;
 }
@@ -43,4 +40,23 @@ header img {
 header a {
   color: var(--color-main-text);
   text-decoration: none;
+}
+
+@media (min-width: 380px) {
+  header img {
+    display: block;
+  }
+
+  header .title * + * {
+    margin-left: var(--content-margin);
+  }
+}
+
+@media (min-width: 768px) {
+  header .content-wrap {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
