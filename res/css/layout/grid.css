@@ -12,11 +12,12 @@
 
 .row {
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  flex-direction: column;
+  flex-wrap: wrap;
   align-items: flex-start;
   justify-content: stretch;
   width: 100%;
+  gap: var(--content-margin);
 }
 
 .row + .row {
@@ -29,10 +30,9 @@
   flex-shrink: 1;
 }
 
-.column + .column {
-  margin-left: var(--content-margin);
-}
-
-@media (max-width: 640px) {
-
+@media (min-width: 768px) {
+  .row {
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
 }
