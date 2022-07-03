@@ -1,12 +1,15 @@
 .streetmap {
   width: 100%;
-  height: var(--height-streetmap);
-  max-height: var(--max-height-streetmap);
+}
+
+.streetmap img {
+  display: block;
 }
 
 .streetmap iframe {
   width: 100%;
-  height: 100%;
+  height: var(--height-streetmap);
+  max-height: var(--max-height-streetmap);
   border: none;
   display: none;
 }
