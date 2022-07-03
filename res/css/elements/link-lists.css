@@ -1,0 +1,14 @@
+.link-list {
+  list-style-type: disc;
+  list-style-position: outside;
+  padding-left: 1rem;
+}
+
+.link-list li {
+  color: var(--color-brand-secondary);
+}
+
+.link-list li a {
+  color: var(--color-brand-primary);
+  text-decoration: none;
+}
