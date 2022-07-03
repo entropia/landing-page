@@ -7,7 +7,7 @@
 html {
   color: var(--color-main-text);
   font-family: 'Fira Sans', sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.6;
 }
 
@@ -24,6 +24,12 @@ img {
   width: 100%;
   max-width: 100%;
   height: auto;
+}
+
+@media (min-width: 420px) {
+  html {
+    font-size: 16px;
+  }
 }
 
 @media (min-width: 1024px) {
