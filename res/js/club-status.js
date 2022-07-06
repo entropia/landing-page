@@ -2,9 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
   const OPENED_CLASS = 'club-status-opened';
   const CLOSED_CLASS = 'club-status-closed';
 
-  function setClubStatus(data) {
-    const clubStatusMarker = document.querySelector('.club-status');
+  const clubStatusMarker = document.querySelector('.club-status');
 
+  function setClubStatus(data) {
     if (data.isOpen) {
       clubStatusMarker.classList.remove(CLOSED_CLASS);
       clubStatusMarker.classList.add(OPENED_CLASS);
@@ -19,7 +19,13 @@ document.addEventListener('DOMContentLoaded', function() {
     clubStatusMarker.setAttribute('title', 'letzte Änderung: ' + lastChangeDateTimeString);
   }
 
-  fetch('api/entropia-club-status-json-api.php')
-    .then((response) => response.json())
-    .then((data) => setClubStatus(data));
+  function updateClubStatus() {
+    fetch('api/entropia-club-status-json-api.php')
+      .then((response) => response.json())
+      .then((data) => setClubStatus(data));
+  }
+
+  setInterval(updateClubStatus, 30000);
+
+  updateClubStatus();
 });
