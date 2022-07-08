@@ -30,12 +30,6 @@ nav ul li a:hover {
   background-color: var(--color-brand-secondary);
 }
 
-@media (max-width: 767px) {
-  nav {
-    margin-top: var(--content-margin);
-  }
-}
-
 @media (min-width: 840px) {
   nav ul li a {
     padding: 4px 10px;

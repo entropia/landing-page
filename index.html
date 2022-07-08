@@ -20,14 +20,41 @@
         <span class="club-status"></span>
       </div>
 
-      <nav>
-        <ul>
-          <li><a href="https://entropia.de/Mailingliste">Mailingliste</a></li>
-          <li><a href="https://matrix.to/#/#entropia:entropia.de">Matrix</a></li>
-          <li><a href="https://github.com/entropia">Github</a></li>
-          <li><a href="https://entropia.de/Hauptseite">Wiki</a></li>
-        </ul>
-      </nav>
+      <div class="navigation">
+        <div class="search-wrapper">
+          <button type="button" class="search-trigger" title="Wiki durchsuchen">
+            <svg width="16" height="16" viewBox="0 0 16 16">
+              <path d="m15.708 13.587-3.675-3.675c.613-.992.967-2.161.967-3.412 0-3.59-2.91-6.5-6.5-6.5s-6.5 2.91-6.5 6.5 2.91 6.5 6.5 6.5c1.251 0 2.42-.354 3.412-.967l3.675 3.675c.389.389 1.025.389 1.414 0l.707-.707c.389-.389.389-1.025 0-1.414zm-12.39-3.905c-.85-.85-1.318-1.98-1.318-3.182s.468-2.332 1.318-3.182 1.98-1.318 3.182-1.318 2.332.468 3.182 1.318 1.318 1.98 1.318 3.182-.468 2.332-1.318 3.182-1.98 1.318-3.182 1.318-2.332-.468-3.182-1.318z" />
+            </svg>
+          </button>
+
+          <dialog class="search-dialog" id="search">
+            <form class="search-form" method="GET" action="https://entropia.de/index.php?">
+              <input type="hidden" name="title" value="Spezial:Suche">
+              <input type="text" class="search-input" name="search" placeholder="Suchbegriff">
+              <input type="hidden" name="go" value="Seite">
+              <button type="submit" class="search-submit" title="Suche starten">
+                <svg width="16" height="16" viewBox="0 0 16 16">
+                  <path d="m15.708 13.587-3.675-3.675c.613-.992.967-2.161.967-3.412 0-3.59-2.91-6.5-6.5-6.5s-6.5 2.91-6.5 6.5 2.91 6.5 6.5 6.5c1.251 0 2.42-.354 3.412-.967l3.675 3.675c.389.389 1.025.389 1.414 0l.707-.707c.389-.389.389-1.025 0-1.414zm-12.39-3.905c-.85-.85-1.318-1.98-1.318-3.182s.468-2.332 1.318-3.182 1.98-1.318 3.182-1.318 2.332.468 3.182 1.318 1.318 1.98 1.318 3.182-.468 2.332-1.318 3.182-1.98 1.318-3.182 1.318-2.332-.468-3.182-1.318z" />
+                </svg>
+              </button>
+              <button type="button" class="search-close" title="Suche abbrechen">
+                <svg width="16" height="16" viewBox="0 0 16 16">
+                  <path d="M 9.4288804,8 15.897162,1.5321408 c 0.139226,-0.1393928 0.139226,-0.3652529 0,-0.5046457 L 14.974663,0.10450245 C 14.907747,0.03775573 14.816727,0 14.722168,0 14.62744,0 14.536589,0.03775573 14.469673,0.10450245 L 8.0015604,6.5725302 1.5334475,0.10450245 c -0.1340009,-0.13399911 -0.3711572,-0.13383056 -0.5048209,0 L 0.10629597,1.0274951 c -0.13939463,0.1393928 -0.13939463,0.3652529 0,0.5046457 L 6.5744089,8 0.10629597,14.467859 c -0.13939463,0.139393 -0.13939463,0.365253 0,0.504646 L 1.0287951,15.895498 C 1.0957111,15.962244 1.1865622,16 1.2812898,16 1.3760178,16 1.4666999,15.962244 1.533616,15.895498 L 8.0017289,9.4274698 14.469842,15.895498 C 14.536762,15.962244 14.627777,16 14.722337,16 c 0.09456,0 0.185578,-0.03776 0.252494,-0.104502 l 0.922499,-0.922993 c 0.139227,-0.139393 0.139227,-0.365253 0,-0.504646 z" />
+                </svg>
+              </button>
+            </form>
+          </dialog>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="https://entropia.de/Mailingliste">Mailingliste</a></li>
+            <li><a href="https://matrix.to/#/#entropia:entropia.de">Matrix</a></li>
+            <li><a href="https://github.com/entropia">Github</a></li>
+            <li><a href="https://entropia.de/Hauptseite">Wiki</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
   </header>
 
@@ -273,6 +300,7 @@
 
   <script src="res/js/club-status.js" defer></script>
   <script src="res/js/events.js" defer></script>
+  <script src="res/js/search.js" defer></script>
   <script src="res/js/streetmap.js" defer></script>
 </body>
 </html>

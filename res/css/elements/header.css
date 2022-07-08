@@ -18,7 +18,8 @@ header .content-wrap .title::after {
   clear: both;
 }
 
-header .logo {
+header .logo,
+header .navigation {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -52,7 +53,13 @@ header a {
   }
 }
 
-@media (min-width: 768px) {
+@media (max-width: 899px) {
+  header .navigation {
+    margin-top: var(--content-margin);
+  }
+}
+
+@media (min-width: 900px) {
   header .content-wrap {
     flex-direction: row;
     flex-wrap: nowrap;

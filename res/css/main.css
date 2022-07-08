@@ -10,6 +10,7 @@
 @import 'elements/images.css';
 @import 'elements/streetmap.css';
 @import 'elements/club-status.css';
+@import 'elements/search.css';
 
 @import 'layout/grid.css';
 @import 'layout/typography.css';

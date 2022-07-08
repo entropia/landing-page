@@ -1,4 +1,4 @@
-:root {
+html {
   --content-wrap: 1280px;
   --content-margin: 24px;
   --content-margin-half: 12px;
@@ -25,10 +25,13 @@
   --breakpoint-medium: 768px;
   --breakpoint-medium-large: 1024px;
   --breakpoint-large: 1280px;
+
+  --golden-ratio-major: 62.8%;
+  --golden-ratio-minor: 38.2%;
 }
 
 @media (min-width: 768px) {
-  :root {
+  html {
     --content-margin: 30px;
     --content-margin-half: 15px;
 

@@ -1,0 +1,76 @@
+.search-wrapper {
+  display: block;
+}
+
+.search-trigger {
+  display: block;
+  border: none;
+  background-color: transparent;
+  appearance: none;
+  cursor: pointer;
+}
+
+.search-trigger svg {
+  width: 24px;
+  height: 24px;
+}
+
+.search-trigger svg path {
+  fill: var(--color-brand-primary);
+}
+
+.search-trigger:hover svg path {
+  fill: var(--color-brand-secondary);
+}
+
+.search-dialog {
+  position: fixed;
+  top: var(--golden-ratio-minor);
+  left: 50%;
+  border: none;
+  transform: translate(-50%, -50%);
+}
+
+.search-dialog::backdrop {
+  background-color: rgba(0, 0, 0, .67);
+}
+
+.search-form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-white);
+}
+
+.search-form input,
+.search-form button {
+  display: block;
+  padding: 12px 18px;
+  background-color: var(--color-white);
+  border: none;
+  outline: none;
+}
+
+.search-form input {
+  font-size: 1rem;
+}
+
+.search-form button {
+  display: block;
+  cursor: pointer;
+}
+
+.search-form button svg {
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.search-form button svg path {
+  fill: var(--color-brand-primary);
+}
+
+.search-form button:hover svg path {
+  fill: var(--color-brand-secondary);
+}
