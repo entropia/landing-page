@@ -1,6 +1,5 @@
 header {
   padding: var(--content-margin) 0;
-  background-color: var(--color-white);
 }
 
 header .content-wrap {

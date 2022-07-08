@@ -5,14 +5,13 @@ td {
   border: solid 1px var(--color-grey-2);
 }
 
-
 table {
   width: 100%;
   border-collapse: collapse;
 }
 
 tr {
-  background-color: var(--color-white);
+  background-color: var(--color-background-main);
 }
 
 tr:nth-of-type(2n+1) {

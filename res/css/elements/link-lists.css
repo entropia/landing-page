@@ -12,3 +12,9 @@
   color: var(--color-brand-primary);
   text-decoration: none;
 }
+
+@media (prefers-color-scheme: dark) {
+  .link-list li {
+    color: var(--color-text-main);
+  }
+}
