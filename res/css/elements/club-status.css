@@ -1,15 +1,10 @@
 .club-status {
   display: block;
+  padding: 2px 6px;
   color: var(--color-white);
   opacity: 0;
   cursor: help;
   transition: opacity 1.2s;
-}
-
-.club-status::before {
-  content: '';
-  display: block;
-  padding: 2px 6px;
 }
 
 .club-status-opened,
@@ -17,18 +12,16 @@
   opacity: 1;
 }
 
-.club-status-opened::before {
-  content: 'geöffnet';
+.club-status-opened {
   background-color: var(--color-status-positive);
 }
 
-.club-status-closed::before {
-  content: 'geschlossen';
+.club-status-closed {
   background-color: var(--color-status-negative);
 }
 
 @media (min-width: 840px) {
-  .club-status::before {
+  .club-status {
     padding: 4px 10px;
   }
 }
