@@ -63,3 +63,9 @@
 .is-touch-device .streetmap iframe {
   pointer-events: none;
 }
+
+@media (prefers-color-scheme: dark) {
+  .streetmap {
+    filter: brightness(.8);
+  }
+}
