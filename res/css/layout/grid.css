@@ -31,9 +31,7 @@
 }
 
 .column-double {
-  flex-basis: 0;
   flex-grow: 2;
-  flex-shrink: 1;
 }
 
 @media (min-width: 768px) {
