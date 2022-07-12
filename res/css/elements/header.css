@@ -3,36 +3,43 @@ header {
 }
 
 header .content-wrap {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas:
+    'title title title'
+    'navigation navigation navigation'
+    'status none search';
+  align-items: center;
+  gap: var(--content-margin);
 }
 
-header .content-wrap .title::before,
-header .content-wrap .title::after {
-  content: '';
-  display: block;
-  clear: both;
+header .title-wrapper {
+  grid-area: title;
 }
 
-header .logo,
-header .navigation {
+header .club-status-wrapper {
+  grid-area: status;
+}
+
+header .search-wrapper {
+  grid-area: search;
+}
+
+header .navigation-wrapper {
+  grid-area: navigation;
+}
+
+header .title {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   gap: var(--content-margin);
 }
 
-header .title * {
-  float: left;
-}
-
 header img {
-  display: none;
   width: auto;
   height: 3rem;
 }
@@ -42,27 +49,31 @@ header a {
   text-decoration: none;
 }
 
-@media (min-width: 380px) {
-  header img {
-    display: block;
-  }
-
-  header .title * + * {
-    margin-left: var(--content-margin);
-  }
-}
-
-@media (max-width: 899px) {
-  header .navigation {
-    margin-top: var(--content-margin);
-  }
-}
-
-@media (min-width: 900px) {
+@media (min-width: 400px) {
   header .content-wrap {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: space-between;
+    grid-template-rows: auto auto;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-areas:
+      'title title title status status'
+      'navigation navigation navigation navigation search';
+  }
+}
+
+@media (min-width: 400px) and (max-width: 959px) {
+  header .club-status-wrapper {
+    justify-self: end;
+  }
+
+  header .search-wrapper {
+    justify-self: end;
+  }
+}
+
+@media (min-width: 960px) {
+  header .content-wrap {
+    grid-template-rows: auto;
+    grid-template-columns: auto auto 1fr auto auto;
+    grid-template-areas:
+      'title status none navigation search';
   }
 }
