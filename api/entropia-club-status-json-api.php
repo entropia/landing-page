@@ -31,7 +31,7 @@ class EntropiaClubStatusJsonApi
     }
 
     /**
-     *
+     * @return void
      */
     public static function main()
     {

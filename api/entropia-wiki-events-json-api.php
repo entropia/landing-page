@@ -72,7 +72,7 @@ class EntropiaWikiEventsJsonApi
     }
 
     /**
-     *
+     * @return void
      */
     public static function main()
     {
