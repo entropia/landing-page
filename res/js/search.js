@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  searchClose.addEventListener('click', function(event) {
+  searchClose.addEventListener('click', function() {
     searchDialog.close();
   });
 });
