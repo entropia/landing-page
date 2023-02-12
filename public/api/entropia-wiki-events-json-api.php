@@ -38,10 +38,10 @@ class EntropiaWikiEventsJsonApi
             $row_content = explode("\n", $table_row->nodeValue);
 
             $table_array[] = [
-                'title' => $row_content[3],
-                'date' => $row_content[0],
-                'time' => $row_content[1],
-                'location' => $row_content[2],
+                'title' => $row_content[4],
+                'date' => $row_content[1],
+                'time' => $row_content[2],
+                'location' => $row_content[3],
             ];
         }
 
