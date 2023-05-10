@@ -1,0 +1,43 @@
+.banner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: var(--content-margin);
+  border: 2px solid var(--color-black);
+  color: var(--color-black);
+  background-color: var(--color-white);
+  text-decoration: none;
+}
+
+.banner h2 {
+  transition: color .2s;
+  margin-top: 1rem;
+}
+
+.banner:hover h2 {
+  color: var(--color-brand-primary);
+}
+
+.banner figure {
+  margin-top: 1rem;
+}
+
+.banner figure img {
+  max-height: 140px;
+  aspect-ratio: 1 / 1;
+}
+
+@media (min-width: 1024px) {
+  .banner figure img {
+    max-height: 200px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .banner {
+    border-color: var(--color-white);
+  }
+}
