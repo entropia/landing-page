@@ -21,6 +21,10 @@ figure img + figcaption {
   aspect-ratio: 16 / 9;
 }
 
+.aspect-ratio-24-to-9 {
+  aspect-ratio: 24 / 9;
+}
+
 .aspect-ratio-32-to-9 {
   aspect-ratio: 32 / 9;
 }
