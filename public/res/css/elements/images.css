@@ -9,8 +9,22 @@ figure img {
   object-position: center;
 }
 
-figure img + figcaption {
+figure figcaption {
   margin-top: .8rem;
+}
+
+.copyright-info {
+  float: right;
+  font-size: 12px;
+  left: -6px;
+  position: relative;
+  top: -20px;
+}
+
+.copyright-info > a {
+  color: var(--color-white);
+  opacity: 0.75;
+  text-decoration: none;
 }
 
 .aspect-ratio-4-to-3 {
