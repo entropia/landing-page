@@ -1,33 +1,42 @@
-document.addEventListener('DOMContentLoaded', function() {
-  function createTableCellContent(text, link) {
-    if (link === null) {
-      return text;
+(function () {
+  function createEventTdCell(text, link) {
+    let tableCell = document.createElement("td");
+    if (link != null) {
+      let anchor = document.createElement("a");
+      anchor.rel = "noreferrer noopener";
+      anchor.target = "_blank";
+      anchor.href = link;
+      anchor.textContent = text;
+      tableCell.appendChild(anchor);
+    } else {
+      let p = document.createElement("p");
+      p.textContent = text;
+      tableCell.appendChild(p);
     }
-
-    return `<a href="${link}" target="_blank" rel="noreferrer noopener">${text}</a>`;
+    return tableCell;
   }
 
   function insertEvents(events) {
     const eventsTable = document.querySelector('.events tbody');
 
     events.forEach(event => {
-      const dateMarkup = createTableCellContent(event.date.text, event.date.link);
-      const timeMarkup = createTableCellContent(event.time.text, event.time.link);
-      const locationMarkup = createTableCellContent(event.location.text, event.location.link);
-      const titleMarkup = createTableCellContent(event.title.text, event.title.link);
+      const dateCell = createEventTdCell(event.date.text, event.date.link);
+      const timeCell = createEventTdCell(event.time.text, event.time.link);
+      const locationCell = createEventTdCell(event.location.text, event.location.link);
+      const titleCell = createEventTdCell(event.title.text, event.title.link);
 
-      eventsTable.innerHTML += `
-        <tr>
-          <td>${dateMarkup}</td>
-          <td>${timeMarkup}</td>
-          <td>${locationMarkup}</td>
-          <td>${titleMarkup}</td>
-        </tr>
-      `;
+      let newRow = document.createElement("tr");
+
+      newRow.appendChild(dateCell);
+      newRow.appendChild(timeCell);
+      newRow.appendChild(locationCell);
+      newRow.appendChild(titleCell);
+
+      eventsTable.appendChild(newRow);
     });
   }
 
   fetch('api/entropia-wiki-events-json-api.php')
     .then((response) => response.json())
-    .then((data) => insertEvents(data.events));
-});
+    .then((data) => insertEvents(data["events"]));
+})()
