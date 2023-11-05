@@ -1,4 +1,4 @@
-(function () {
+(() => {
   function createEventTdCell(text, link) {
     let tableCell = document.createElement("td");
     if (link != null) {
@@ -39,4 +39,4 @@
   fetch('api/entropia-wiki-events-json-api.php')
     .then((response) => response.json())
     .then((data) => insertEvents(data["events"]));
-})()
+})();
