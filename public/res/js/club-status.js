@@ -1,4 +1,4 @@
-(function () {
+(() => {
   const OPENED_CLASS = 'club-status-opened';
   const CLOSED_CLASS = 'club-status-closed';
 
@@ -29,4 +29,4 @@
   setInterval(updateClubStatus, 30000);
 
   updateClubStatus();
-})()
+})();
