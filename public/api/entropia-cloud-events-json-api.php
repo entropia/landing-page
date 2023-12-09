@@ -2,56 +2,70 @@
 
 use Sabre\VObject;
 
-class EntrioiaCloudEventsJsosApi
+require '../../vendor/autoload.php';
+
+const TIMEZONE = new DateTimeZone('Europe/Berlin');
+
+class EntropiaCloudEventsJsonApi
 {
-    const DEFAULT_ICS_URL = '';
+    const DEFAULT_ICS_URL = 'https://cloud.entropia.de/remote.php/dav/public-calendars/3Ag5YobrwKpWYKsZ?export';
     const DEFAULT_MAX_ENTRIES = 10;
 
-        /**
-         * @param ?string $url the url of the ics file
-         * @return string of the response body
-         */
+    /**
+     * @param ?string $url the url of the ics file
+     * @return string of the response body
+     */
     private static function queryIcsContent(?string $url = null)
     {
         return file_get_contents($url ?? self::DEFAULT_ICS_URL);
     }
 
-    private static function requestEventsAsJson(int $entries_count = null)
+    private static function getUpcomingEvents(int $maxEntries = null)
     {
         $vcalendar = VObject\Reader::read(self::queryIcsContent());
 
-        $events_content = [];
+        $events = [];
+        $i = 0;
 
-        foreach ($vcalendar->VEVENT as $event){
+        $now = new DateTime('now', TIMEZONE);
 
-            $unknown_tz = new DateTimeZone($event->DTSTART->TZID);
-            $dt = new DateTime($event->DTSTART):setTimezone($unknown_tz);
-            $local_tz = new DateTimeZone("Europe/Berlin");
-            $dt_in_local_tz = $dt->setTimezone($local_tz);
+        foreach ($vcalendar->VEVENT as $event) {
+            // ignore past events
+            if ($event->DTEND->getDateTime(TIMEZONE) < $now) {
+                continue;
+            }
 
-            $events_conent[] = [
-                'title' => $event->SUMMARY,
-                'date' => $dt_in_local_tz::format(""),
-                'time' => $dt_in_local_tz::format("H:i:s"),
-                'location' => $event->LOCATION,
+            $events[] = [
+                'title' => (string) $event->SUMMARY,
+                'datetime' => $event->DTSTART->getDateTime(TIMEZONE)->format(DateTimeInterface::ATOM),
+                'location' => (string) $event->LOCATION,
             ];
+
+            // respect max-entries parameter
+            if (++$i == $maxEntries) {
+                break;
+            }
         }
 
-        return json_encode(
-            [
-                'events' => $events_content
-            ],
-            JSON_UNESCAPED_UNICODE
-        );
+        return $events;
     }
 
     public static function main()
     {
-        $request_parameters = self::getRequestParameters();
-        $max_entries = $request_parameters['max-entries'] ?? self::DEFAULT_MAX_ENTRIES;
+        $maxEntries = $_GET['max-entries'] ?? self::DEFAULT_MAX_ENTRIES;
 
         header('Content-type: application/json; charset=utf-8');
-        echo self::requestEventsAsJson($max_entries);
+        try {
+            $events = self::getUpcomingEvents($maxEntries);
+
+            echo \json_encode([
+                'events' => $events
+            ]);
+        } catch (\Throwable $e) {
+            http_response_code(500);
+            echo '{}';
+        }
     }
 }
+
 EntropiaCloudEventsJsonApi::main();
