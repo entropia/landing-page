@@ -53,6 +53,8 @@ class EntropiaCloudEventsJsonApi
     {
         $maxEntries = max(((int) $_GET['max-entries']) ?? self::DEFAULT_MAX_ENTRIES, 25);
 
+        // cache for one hour
+        header('Cache-Control: public, max-age=3600');
         header('Content-type: application/json; charset=utf-8');
         try {
             $events = self::getUpcomingEvents($maxEntries);
