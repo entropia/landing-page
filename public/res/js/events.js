@@ -4,6 +4,26 @@ const escapeHTML = string => {
   return p.innerHTML;
 };
 
+const makeLinksClickable = string => {
+  let nodes = [];
+
+  string.split(/\s/).map(word => {
+    try {
+      const url = new URL(word);
+
+      // prevent XSS by using DOM API instead of string concatenation
+      let a = document.createElement('a');
+      a.textContent = word;
+      a.href = url;
+      nodes.push(a.outerHTML);
+    } catch {
+      nodes.push(escapeHTML(word));
+    }
+  });
+
+  return nodes.join(' ');
+}
+
 const formatters = {
   'date': x => new Date(x).toLocaleDateString('de-DE', {
     day: '2-digit',
@@ -14,9 +34,9 @@ const formatters = {
     hour: '2-digit',
     minute: '2-digit',
   }) + ' Uhr',
-  'location': escapeHTML,
+  'location': makeLinksClickable,
   'title': escapeHTML,
-  'description': escapeHTML,
+  'description': makeLinksClickable,
 };
 
 (() => {

@@ -25,17 +25,21 @@ td {
 }
 
 #events {
-    width: 100%;
+  width: 100%;
 }
 
 #events th.small {
-    width: 10%;
+  width: 10%;
 }
 
 #events th.medium {
-    width: 20%;
+  width: 20%;
 }
 
 #events th.large {
-    width: 40%;
+  width: 40%;
+}
+
+#events a {
+  color: var(--color-brand-primary);
 }
