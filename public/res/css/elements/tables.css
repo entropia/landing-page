@@ -23,3 +23,19 @@ td {
   padding: 4px 8px;
   text-align: left;
 }
+
+#events {
+    width: 100%;
+}
+
+#events th.small {
+    width: 10%;
+}
+
+#events th.medium {
+    width: 20%;
+}
+
+#events th.large {
+    width: 40%;
+}

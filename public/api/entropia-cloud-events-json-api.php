@@ -38,6 +38,7 @@ class EntropiaCloudEventsJsonApi
                 'title' => (string) $event->SUMMARY,
                 'datetime' => $event->DTSTART->getDateTime($timezone)->format(DateTimeInterface::ATOM),
                 'location' => (string) $event->LOCATION,
+                'description' => (string) $event->DESCRIPTION,
             ];
 
             // respect max-entries parameter

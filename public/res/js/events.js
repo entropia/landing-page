@@ -16,11 +16,12 @@ const formatters = {
   }) + ' Uhr',
   'location': escapeHTML,
   'title': escapeHTML,
+  'description': escapeHTML,
 };
 
 (() => {
   function insertEvents(events) {
-    const eventsTable = document.querySelector('.events tbody');
+    const eventsTable = document.querySelector('#events tbody');
 
     events.forEach(event => {
       eventsTable.innerHTML += `
@@ -29,6 +30,7 @@ const formatters = {
           <td>${formatters['time'](event.datetime)}</td>
           <td>${formatters['location'](event.location)}</td>
           <td>${formatters['title'](event.title)}</td>
+          <td>${formatters['description'](event.description)}</td>
         </tr>
       `;
     });
