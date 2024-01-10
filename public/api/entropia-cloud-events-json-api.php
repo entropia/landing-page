@@ -51,7 +51,7 @@ class EntropiaCloudEventsJsonApi
 
     public static function main()
     {
-        $maxEntries = max(((int) $_GET['max-entries']) ?? self::DEFAULT_MAX_ENTRIES, 25);
+        $maxEntries = max((int) ($_GET['max-entries'] ?? self::DEFAULT_MAX_ENTRIES), 25);
 
         // cache for one hour
         header('Cache-Control: public, max-age=3600');

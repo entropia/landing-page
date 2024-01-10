@@ -36,5 +36,7 @@ const formatters = {
 
   fetch('api/entropia-cloud-events-json-api.php')
     .then((response) => response.json())
-    .then((data) => insertEvents(data.events));
+    .then((data) => data.events.sort(
+      (a, b) => new Date(a.datetime) - new Date(b.datetime))) // make sure events are sorted
+    .then((events) => insertEvents(events));
 })();
