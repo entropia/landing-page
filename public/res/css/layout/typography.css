@@ -45,3 +45,9 @@ p a {
 p a:hover {
   text-decoration: underline;
 }
+
+time,
+address {
+  font-style: normal;
+  text-decoration: none;
+}

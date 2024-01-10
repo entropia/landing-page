@@ -10,6 +10,15 @@ table {
   border-collapse: collapse;
 }
 
+table a {
+  color: var(--color-brand-primary);
+  text-decoration: none;
+}
+
+table a:hover {
+  text-decoration: underline;
+}
+
 tr {
   background-color: var(--color-background-main);
 }
@@ -38,8 +47,4 @@ td {
 
 #events th.large {
   width: 40%;
-}
-
-#events a {
-  color: var(--color-brand-primary);
 }
