@@ -4,10 +4,9 @@ use Sabre\VObject;
 
 require '../../vendor/autoload.php';
 
-const TIMEZONE = new DateTimeZone('Europe/Berlin');
-
 class EntropiaCloudEventsJsonApi
 {
+    const TIMEZONE = new DateTimeZone('Europe/Berlin');
     const DEFAULT_ICS_URL = 'https://cloud.entropia.de/remote.php/dav/public-calendars/3Ag5YobrwKpWYKsZ?export';
     const DEFAULT_MAX_ENTRIES = 10;
 
@@ -27,17 +26,17 @@ class EntropiaCloudEventsJsonApi
         $events = [];
         $i = 0;
 
-        $now = new DateTime('now', TIMEZONE);
+        $now = new DateTime('now', self::TIMEZONE);
 
         foreach ($vcalendar->VEVENT as $event) {
             // ignore past events
-            if ($event->DTEND->getDateTime(TIMEZONE) < $now) {
+            if ($event->DTEND->getDateTime(self::TIMEZONE) < $now) {
                 continue;
             }
 
             $events[] = [
                 'title' => (string) $event->SUMMARY,
-                'datetime' => $event->DTSTART->getDateTime(TIMEZONE)->format(DateTimeInterface::ATOM),
+                'datetime' => $event->DTSTART->getDateTime(self::TIMEZONE)->format(DateTimeInterface::ATOM),
                 'location' => (string) $event->LOCATION,
             ];
 
