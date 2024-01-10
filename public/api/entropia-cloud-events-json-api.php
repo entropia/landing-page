@@ -26,11 +26,11 @@ class EntropiaCloudEventsJsonApi
         $events = [];
         $i = 0;
 
-        $now = new DateTime('now', $timezone);
+        $now = new DateTimeImmutable('now', $timezone);
+        $nowPlusTwoWeeks = $now->modify('+14 days');
 
         foreach ($vcalendar->VEVENT as $event) {
-            // ignore past events
-            if ($event->DTEND->getDateTime($timezone) < $now) {
+            if (!$event->isInTimeRange($now, $nowPlusTwoWeeks)) {
                 continue;
             }
 
@@ -51,7 +51,7 @@ class EntropiaCloudEventsJsonApi
 
     public static function main()
     {
-        $maxEntries = $_GET['max-entries'] ?? self::DEFAULT_MAX_ENTRIES;
+        $maxEntries = max(((int) $_GET['max-entries']) ?? self::DEFAULT_MAX_ENTRIES, 25);
 
         header('Content-type: application/json; charset=utf-8');
         try {
