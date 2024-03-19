@@ -10,6 +10,15 @@ table {
   border-collapse: collapse;
 }
 
+table a {
+  color: var(--color-brand-primary);
+  text-decoration: none;
+}
+
+table a:hover {
+  text-decoration: underline;
+}
+
 tr {
   background-color: var(--color-background-main);
 }
@@ -24,11 +33,18 @@ td {
   text-align: left;
 }
 
-table a {
-  color: var(--color-brand-primary);
-  text-decoration: none;
+#events {
+  width: 100%;
 }
 
-table a:hover {
-  text-decoration: underline;
+#events th.small {
+  width: 10%;
+}
+
+#events th.medium {
+  width: 20%;
+}
+
+#events th.large {
+  width: 40%;
 }
