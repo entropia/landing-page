@@ -34,7 +34,7 @@ class EntropiaWikiEventsJsonApi
     private static function convertHtmlToDomElement(string $entire_html_content)
     {
         $dom_document = new DOMDocument();
-        $dom_document->loadHTML($entire_html_content);
+        $dom_document->loadHTML($entire_html_content, LIBXML_NOERROR|LIBXML_NOWARNING);
 
         return $dom_document;
     }
