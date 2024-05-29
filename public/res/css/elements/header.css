@@ -16,6 +16,12 @@ header .content-wrap {
 
 header .title-wrapper {
   grid-area: title;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--content-margin);
 }
 
 header .club-status-wrapper {
@@ -28,15 +34,6 @@ header .search-wrapper {
 
 header .navigation-wrapper {
   grid-area: navigation;
-}
-
-header .title {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: var(--content-margin);
 }
 
 header img {
