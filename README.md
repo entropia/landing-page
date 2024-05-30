@@ -2,6 +2,8 @@
 
 The live site is available here: https://entropia.de
 
+![Screenshot](screenshot.png)
+
 ## Setup
 
 ### With Docker
