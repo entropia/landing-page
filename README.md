@@ -26,7 +26,7 @@ docker run -p 3000:80 -v ./public:/var/www/html entropia-landing-page   # develo
 #### Requirements
 
 * A web server like nginx or Apache
-* PHP >= 8.1 (older versions may also work but have not been tested)
+* PHP >= 8.0 (the version on the entropia.de web server)
 
 #### Steps
 
