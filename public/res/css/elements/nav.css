@@ -1,18 +1,14 @@
-nav ul::before,
-nav ul::after {
-  content: '';
-  display: block;
-  clear: both;
+nav ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: calc(var(--content-margin) / 2);
 }
 
 nav ul li {
   position: relative;
   display: block;
   float: left;
-}
-
-nav ul li + li {
-  margin-left: calc(var(--content-margin) / 2);
 }
 
 nav ul li a {
