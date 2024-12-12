@@ -1,18 +1,21 @@
 (() => {
   function createEventTdCell(text, link) {
-    let tableCell = document.createElement("td");
+    let tableCell = document.createElement('td');
+
     if (link != null) {
-      let anchor = document.createElement("a");
-      anchor.rel = "noreferrer noopener";
-      anchor.target = "_blank";
+      let anchor = document.createElement('a');
+      anchor.rel = 'noreferrer noopener';
+      anchor.target = '_blank';
       anchor.href = link;
       anchor.textContent = text;
       tableCell.appendChild(anchor);
-    } else {
-      let p = document.createElement("p");
+    }
+    else {
+      let p = document.createElement('p');
       p.textContent = text;
       tableCell.appendChild(p);
     }
+
     return tableCell;
   }
 
@@ -25,7 +28,7 @@
       const locationCell = createEventTdCell(event.location.text, event.location.link);
       const titleCell = createEventTdCell(event.title.text, event.title.link);
 
-      let newRow = document.createElement("tr");
+      let newRow = document.createElement('tr');
 
       newRow.appendChild(dateCell);
       newRow.appendChild(timeCell);
@@ -38,5 +41,5 @@
 
   fetch('api/entropia-wiki-events-json-api.php')
     .then((response) => response.json())
-    .then((data) => insertEvents(data["events"]));
+    .then((data) => insertEvents(data['events']));
 })();
