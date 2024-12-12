@@ -10,17 +10,8 @@ table {
   border-collapse: collapse;
 }
 
-tr {
-  background-color: var(--color-background-main);
-}
-
-tr:nth-of-type(2n+1) {
-  background-color: var(--color-grey-1);
-}
-
 th,
 td {
-  padding: 4px 8px;
   text-align: left;
 }
 
@@ -31,4 +22,45 @@ table a {
 
 table a:hover {
   text-decoration: underline;
+}
+
+@media (max-width: 767px) {
+  table,
+  thead,
+  tbody,
+  tr,
+  th,
+  td {
+    display: block;
+    border: none;
+  }
+
+  table {
+    position: relative;
+  }
+
+  tr:first-child {
+    position: absolute;
+    top: -99999px;
+    right: -99999px;
+  }
+
+  tr + tr {
+    margin-top: 16px;
+  }
+}
+
+@media (min-width: 768px) {
+  tr {
+    background-color: var(--color-background-main);
+  }
+
+  tr:nth-of-type(2n+1) {
+    background-color: var(--color-grey-1);
+  }
+
+  th,
+  td {
+    padding: 4px 8px;
+  }
 }
