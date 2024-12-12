@@ -9,7 +9,8 @@
       clubStatusMarker.classList.remove(CLOSED_CLASS);
       clubStatusMarker.classList.add(OPENED_CLASS);
       clubStatusMarker.innerHTML = 'geöffnet';
-    } else {
+    }
+    else {
       clubStatusMarker.classList.remove(OPENED_CLASS);
       clubStatusMarker.classList.add(CLOSED_CLASS);
       clubStatusMarker.innerHTML = 'geschlossen';
