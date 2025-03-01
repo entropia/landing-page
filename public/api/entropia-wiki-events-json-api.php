@@ -3,7 +3,7 @@
 class EntropiaWikiEventsJsonApi
 {
     const WIKI_EVENTS_LIST_URL = 'https://entropia.de/Termine';
-    const DEFAULT_MAX_ENTRIES = 10;
+    const DEFAULT_MAX_ENTRIES = 15;
 
     const COLUMN_DATE_INDEX = 0;
     const COLUMN_TIME_INDEX = 1;
