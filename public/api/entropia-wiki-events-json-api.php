@@ -3,7 +3,6 @@
 class EntropiaWikiEventsJsonApi
 {
     const WIKI_EVENTS_LIST_URL = 'https://entropia.de/Termine';
-    const DEFAULT_MAX_ENTRIES = 15;
 
     const COLUMN_DATE_INDEX = 0;
     const COLUMN_TIME_INDEX = 1;
@@ -144,17 +143,12 @@ class EntropiaWikiEventsJsonApi
     }
 
     /**
-     * @param ?int $max_entries the desired maximum number of events in the API response JSON
      * @return string|false
      */
-    private static function requestNextEventsAsJson(?int $max_entries = null)
+    private static function requestNextEventsAsJson()
     {
         $entire_html_content = self::queryHtmlContent();
         $events_table_content = self::parseTableHtmlContent($entire_html_content);
-
-        if (is_int($max_entries) && count($events_table_content) > $max_entries) {
-            $events_table_content = array_slice($events_table_content, 0, $max_entries);
-        }
 
         return json_encode(
             [
@@ -170,10 +164,9 @@ class EntropiaWikiEventsJsonApi
     public static function main()
     {
         $request_parameters = self::getRequestParameters();
-        $max_entries = $request_parameters['max-entries'] ?? self::DEFAULT_MAX_ENTRIES;
 
         header('Content-type: application/json; charset=utf-8');
-        echo self::requestNextEventsAsJson($max_entries);
+        echo self::requestNextEventsAsJson();
     }
 }
 
