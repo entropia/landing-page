@@ -24,7 +24,7 @@
   function updateClubStatus() {
     fetch('api/entropia-club-status-json-api.php')
       .then(response => response.json())
-      .then(data => setClubStatus(data["isOpen"], data["lastChange"]));
+      .then(data => setClubStatus(data['isOpen'], data['lastChange']));
   }
 
   setInterval(updateClubStatus, 30000);
