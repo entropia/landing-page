@@ -1,3 +1,3 @@
-FROM php:8-apache
+FROM php:8.0-apache
 
 COPY public/ /var/www/html/
