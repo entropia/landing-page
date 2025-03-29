@@ -16,7 +16,7 @@
       clubStatusMarker.innerHTML = 'geschlossen';
     }
 
-    const lastChangeDateTimeString = (new Date(lastChange).toLocaleString('de-DE'));
+    const lastChangeDateTimeString = (new Date(lastChange * 1000).toLocaleString('de-DE'));
 
     clubStatusMarker.setAttribute('title', 'letzte Änderung: ' + lastChangeDateTimeString);
   }
@@ -24,7 +24,7 @@
   function updateClubStatus() {
     fetch('api/entropia-club-status-json-api.php')
       .then(response => response.json())
-      .then(data => setClubStatus(data['isOpen'], data['lastChange']));
+      .then(data => setClubStatus(data['state']['open'], data['state']['lastchange']));
   }
 
   setInterval(updateClubStatus, 30000);
