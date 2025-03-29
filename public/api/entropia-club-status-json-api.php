@@ -6,10 +6,8 @@ class EntropiaClubStatusJsonApi
 
     public static function main()
     {
-        $space_api_content = file_get_contents(self::WIKI_SPACE_API_URL);
-
         header('Content-type: application/json; charset=utf-8');
-        echo $space_api_content;
+        echo file_get_contents(self::WIKI_SPACE_API_URL);
     }
 }
 
