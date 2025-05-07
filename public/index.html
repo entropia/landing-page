@@ -14,7 +14,6 @@
       <div class="title-wrapper">
         <img src="res/img/teebeutel.svg" alt="Entropia e.V.">
         <h1>Entropia</h1>
-        </a>
       </div>
 
       <div class="club-status-wrapper">
@@ -42,8 +41,9 @@
         <dialog class="search-dialog" id="search">
           <form class="search-form" method="GET" action="https://entropia.de/index.php?">
             <input type="hidden" name="title" value="Spezial:Suche">
-            <input type="text" class="search-input" name="search" placeholder="Suchbegriff" aria-label="Suchbegriff">
+            <input type="text" class="search-input" name="search" placeholder="Suchbegriff" aria-label="Suchbegriff" list="search-datalist">
             <input type="hidden" name="go" value="Seite">
+            <datalist id="search-datalist" class="search-datalist"></datalist>
 
             <button type="submit" class="search-submit" title="Suche starten" aria-label="Suche starten">
               <svg width="16" height="16" viewBox="0 0 16 16">
