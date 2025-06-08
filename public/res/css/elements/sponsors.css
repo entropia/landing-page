@@ -1,0 +1,14 @@
+.sponsors {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 90px;
+  margin-bottom: 30px;
+}
+
+.sponsors .sponsor {
+  width: 120px;
+  height: auto;
+}
