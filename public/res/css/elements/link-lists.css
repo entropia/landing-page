@@ -13,8 +13,12 @@
   text-decoration: none;
 }
 
+.link-list + h3 {
+  margin-top: 30px;
+}
+
 @media (prefers-color-scheme: dark) {
   .link-list li {
-    color: var(--color-text-main);
+    color: var(--color-main-text);
   }
 }

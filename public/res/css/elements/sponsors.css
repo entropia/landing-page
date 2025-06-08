@@ -3,12 +3,26 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: flex-start;
-  justify-content: flex-start;
-  margin-top: 90px;
-  margin-bottom: 30px;
+  justify-content: flex-end;
 }
 
 .sponsors .sponsor {
-  width: 120px;
+  width: auto;
+  max-width: 120px;
   height: auto;
+  list-style-type: none;
+}
+
+.sponsors .sponsor picture {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
+}
+
+.sponsors .sponsor img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
 }
