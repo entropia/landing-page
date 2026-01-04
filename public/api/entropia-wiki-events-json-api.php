@@ -2,20 +2,12 @@
 
 class EntropiaWikiEventsJsonApi
 {
-    const WIKI_EVENTS_LIST_URL = 'https://entropia.de/Termine';
+    const WIKI_EVENTS_LIST_URL = 'https://entropia.de/Vorlage:TerminSync';
 
     const COLUMN_DATE_INDEX = 0;
     const COLUMN_TIME_INDEX = 1;
     const COLUMN_LOCATION_INDEX = 2;
     const COLUMN_TITLE_INDEX = 3;
-
-    /**
-     * @return array all relevant HTTP request parameters combined
-     */
-    private static function getRequestParameters()
-    {
-        return array_merge($_REQUEST, $_GET, $_POST);
-    }
 
     /**
      * @param ?string $url the public url of the requested website
@@ -163,8 +155,6 @@ class EntropiaWikiEventsJsonApi
      */
     public static function main()
     {
-        $request_parameters = self::getRequestParameters();
-
         header('Content-type: application/json; charset=utf-8');
         echo self::requestNextEventsAsJson();
     }

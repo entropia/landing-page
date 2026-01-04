@@ -9,9 +9,20 @@
       anchor.href = link;
       anchor.textContent = text;
       tableCell.appendChild(anchor);
-    }
-    else {
+    } else {
       let p = document.createElement('p');
+
+      // Wenn Klammerzusatz -> neue Zeile + small
+      let match = text.match(/^(.*?)(\s*\(.*\))$/);
+      if (match) {
+        p.textContent = match[1];
+        let small = document.createElement('small');
+        small.textContent = match[2];
+        tableCell.appendChild(p);
+        tableCell.appendChild(small);
+        return tableCell;
+      }
+
       p.textContent = text;
       tableCell.appendChild(p);
     }
