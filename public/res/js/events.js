@@ -13,7 +13,7 @@
       let p = document.createElement('p');
 
       // Wenn Klammerzusatz -> neue Zeile + small
-      let match = text.match(/^(.*?)(\s*\(.*\))$/);
+      let match = text?.match(/^(.*?)(\s*\(.*\))$/);
       if (match) {
         p.textContent = match[1];
         let small = document.createElement('small');
